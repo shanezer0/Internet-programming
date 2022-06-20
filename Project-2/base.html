@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+
+    <title>UTS Car Renting - 14022469</title>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="base.css">
+    
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="#display" style="font-size: 35px;" >Hertz-UTS</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              
+              
+              
+              <li class="nav-item  navbar-right">
+                <a class="nav-link" href="cart.php"   style="font-size: 30px;" target="_self"  >Cart</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+   
+
+<div class="container" id="container">
+    <div id="display" class="row mt-3">
+    </div>
+</div>
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+    var cars;
+
+        
+        $.ajax({
+            dataType: 'json',
+            url: "cars.json",
+            success: (data) => {
+                console.log(data.cars[0])
+                cars = data.cars;
+                displayCarDate(data)
+              }
+          });
+
+    function displayCarDate(data) {
+            var carList = data.cars;
+            counter = -1;
+
+            
+
+            for (var i = 0; i < carList.length; i++) {
+                var txt = "";
+                var id = 0;
+                counter += 1;
+
+
+            txt = carList[i].CarName+"<br>Category:"+
+            carList[i].Category+
+            "<br>Mileage:"+carList[i].Mileage+"<br>Fuel Type:"+
+            carList[i].FuelType+"<br>Seats:"+carList[i].Seats+
+            "<br>Price Per Day:"+carList[i].PricePerDay;
+
+      
+
+                var div1 = document.createElement('div');
+                div1.className ='card col-sm-3';
+                
+                var img = document.createElement("img");
+                img.id="car_image";
+                img.src = carList[i].Image;
+
+                var div3 = document.createElement('div');
+                div3.className = 'card-body';
+                div3.style="padding-top: 50px; padding-bottom: 50px;";
+                div3.id = "cardBody";
+
+                var div4 = document.createElement('div');
+                div4.className = 'card-title';
+                 var title = document.createElement('h3');
+                 title.innerHTML = carList[i].CarName;
+
+                 var row = document.createElement('div');
+                row.className = 'row';
+
+                
+
+                var h5 = document.createElement('h4');
+                h5.innerHTML = txt;
+
+                var bookButton = document.createElement('button');
+                bookButton.className = "btn btn-danger";
+                bookButton.id = carList[i].ID;
+                bookButton.innerHTML = "Book Now";
+                bookButton.onclick = function () {
+                    book(this);
+                }
+                
+                div1.appendChild(img);
+                div1.appendChild(div3);
+                div3.appendChild(div4);
+                div3.appendChild(h5);
+                div3.appendChild(bookButton);
+               
+
+
+                document.getElementById("display").appendChild(div1);
+
+            }
+    }
+
+        function book (button) {
+
+            
+            $.ajax({
+                
+                url: "availability.php?id="+button.getAttributeNode("id").value,
+                success: (data) => {
+                   
+                    if(cars[button.getAttributeNode("id").value - 1].Availability){
+                        window.alert("Add to the cart successfully.")
+                    }
+                    else{
+                        window.alert("Sorry, the car is not available now. Please try other cars.")
+                    }
+                    
+                  }
+              });
+              
+        }
+
+</script>

@@ -1,0 +1,31 @@
+body {
+    font-size: 14px;
+    line-height: 30px;
+    font-family: Arial,sans-serif;
+    
+    background-image: url('gradient.jpg');
+    }
+#table1, #table2{
+    margin-left: auto;
+    margin-right: auto;
+    
+    border:solid black 2px;
+    border-radius:6px;
+    padding-top:10px;
+    margin-bottom:50px;
+    }
+      
+#table1 tr > * + * {
+    padding-left: 50em;
+    }
+
+#table2 tr> * + *{
+    padding-left: 28em;
+}
+            
+h1, p{
+    padding-left:200px;
+    }
+h1{
+    padding-top:50px;
+    }

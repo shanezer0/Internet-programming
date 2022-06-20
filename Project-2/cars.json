@@ -1,0 +1,20 @@
+{
+    
+    "cars":
+        [
+            {"ID": "1","Image":"images/cars/320i.jpg", "CarName":"BMW 320i","Category":"Sedan", "Mileage":"9246", "FuelType":"Petrol", "Seats":"5", "PricePerDay":"310", "Availability":true},
+            {"ID": "2","Image":"images/cars/camry.jpg", "CarName":"Toyota Camry","Category":"Sedan", "Mileage":"6474", "FuelType":"Hybrid", "Seats":"5", "PricePerDay":"255", "Availability":true},
+            {"ID": "3","Image":"images/cars/captiva.jpg", "CarName":"Holden Captiva","Category":"Sedan", "Mileage":"6672", "FuelType":"Petrol", "Seats":"7", "PricePerDay":"295", "Availability":false},
+            {"ID": "4","Image":"images/cars/cherokee.jpg", "CarName":"Jeep Cherokee","Category":"SUV", "Mileage":"5913", "FuelType":"Diesel", "Seats":"7", "PricePerDay":"300", "Availability":true},
+            {"ID": "5","Image":"images/cars/civic.jpg", "CarName":"Honda Civic","Category":"Sedan", "Mileage":"7596", "FuelType":"Petrol", "Seats":"5", "PricePerDay":"280", "Availability":true},
+            {"ID": "6","Image":"images/cars/glc.jpg", "CarName":"Mercedes GLC","Category":"Sedan", "Mileage":"9636", "FuelType":"Petrol", "Seats":"5", "PricePerDay":"360", "Availability":false},
+            {"ID": "7","Image":"images/cars/golf.jpg", "CarName":"Volkswagen Golf","Category":"Sedan", "Mileage":"7732", "FuelType":"Petrol", "Seats":"5", "PricePerDay":"240", "Availability":true},
+            {"ID": "8","Image":"images/cars/jimny.jpg", "CarName":"Suzuki Jimny","Category":"Wagon", "Mileage":"8724", "FuelType":"Diesel", "Seats":"5", "PricePerDay":"265", "Availability":false},
+            {"ID": "9","Image":"images/cars/sonata.jpg", "CarName":"Hyundai Sonata","Category":"Sedan", "Mileage":"6789", "FuelType":"Petrol", "Seats":"5", "PricePerDay":"280", "Availability":true},
+            {"ID": "10","Image":"images/cars/xtrail.jpg", "CarName":"Nissan X-trail","Category":"SUV", "Mileage":"9846", "FuelType":"Diesel", "Seats":"7", "PricePerDay":"280", "Availability":true}
+        ]
+    
+}
+    
+        
+    
